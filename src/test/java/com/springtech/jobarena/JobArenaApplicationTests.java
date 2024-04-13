@@ -1,4 +1,4 @@
-package com.springtech.JobArena;
+package com.springtech.jobarena;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
