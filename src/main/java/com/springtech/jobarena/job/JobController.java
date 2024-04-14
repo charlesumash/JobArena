@@ -28,26 +28,26 @@ public class JobController {
         return new ResponseEntity<>("Job successfully created", HttpStatus.CREATED);
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<Job> getJobById(@PathVariable Long id){
-        Job job = jobService.getJobById(id);
+    @GetMapping("/{jobId}")
+    public ResponseEntity<Job> getJobById(@PathVariable Long jobId){
+        Job job = jobService.getJobById(jobId);
         if(job != null){
             return new ResponseEntity<>(job, HttpStatus.OK);
         }
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
-    @DeleteMapping("/{id}")
-    public ResponseEntity<String> deleteJob(@PathVariable Long id){
-        Boolean deleted = jobService.deleteJobById(id);
+    @DeleteMapping("/{jobId}")
+    public ResponseEntity<String> deleteJob(@PathVariable Long jobId){
+        Boolean deleted = jobService.deleteJobById(jobId);
         if(deleted){
             return new ResponseEntity<>("Job successfully deleted", HttpStatus.ACCEPTED);
         }
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
-    @PutMapping("/{id}")
-    public ResponseEntity<String> updateJob(@PathVariable Long id,
+    @PutMapping("/{jobId}")
+    public ResponseEntity<String> updateJob(@PathVariable Long jobId,
                                             @RequestBody Job updatedJob){
-        Boolean updated = jobService.updateJobById(id, updatedJob);
+        Boolean updated = jobService.updateJobById(jobId, updatedJob);
         if (updated){
             return new ResponseEntity<>("Job successfully updated", HttpStatus.OK);
         }

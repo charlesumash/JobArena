@@ -7,9 +7,9 @@ public interface JobService {
 
     public void createJob(Job job);
 
-    public Job getJobById(Long id);
+    public Job getJobById(Long jobId);
 
-    public Boolean deleteJobById(Long id);
+    public Boolean deleteJobById(Long jobId);
 
-    public Boolean updateJobById(Long id, Job updatedJob);
+    public Boolean updateJobById(Long jobId, Job updatedJob);
 }
