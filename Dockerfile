@@ -1,5 +1,5 @@
 FROM openjdk:17-jdk
-COPY target/jobarena.jar .
+COPY target/jobarena-app.jar .
 EXPOSE 8080
-ENTRYPOINT ["java", "-jar", "jobarena.jar"]
+ENTRYPOINT ["java", "-jar", "jobarena-app.jar"]
 
